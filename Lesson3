@@ -9,16 +9,31 @@ public class Lesson3 {
         System.out.println("Apple");
     }
 
-    public static void checkSumSing() {
+   public static void checkSumSing() {
         int a = 5;
         int b = 1;
 
-        if (a+b>0) {
+        if (a + b > 0) {
             System.out.println("Сумма положительная");
-        } else if (a+b<0) {
+        } else if (a + b < 0) {
             System.out.println("Сумма отрицательная");
         } else {
             System.out.println("Сумма равна нулю");
+        }
+    }
+  public static void main(String[] args) {
+        printColor();
+    }
+
+    public static void printColor() {
+        int value = -5; 
+
+        if (value <= 0) {
+            System.out.println("Красный");
+        } else if (value >= 1 && value <= 100) {
+            System.out.println("Желтый");
+        } else { // value > 100
+            System.out.println("Зеленый");
         }
     }
 }
