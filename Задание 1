@@ -1,0 +1,43 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Товар {
+    private String название;
+    private LocalDate датаПроизводства;
+    private String производитель;
+    private String странаПроисхождения;
+    private double цена;
+    private boolean состояниеБронирования;
+
+    public Товар(String название, LocalDate датаПроизводства, String производитель, String странаПроисхождения, double цена, boolean состояниеБронирования) {
+        this.название = название;
+        this.датаПроизводства = датаПроизводства;
+        this.производитель = производитель;
+        this.странаПроисхождения = странаПроисхождения;
+        this.цена = цена;
+        this.состояниеБронирования = состояниеБронирования;
+    }
+
+    public void вывестиИнформацию() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        System.out.println("Название: " + название);
+        System.out.println("Дата производства: " + датаПроизводства.format(formatter));
+        System.out.println("Производитель: " + производитель);
+        System.out.println("Страна происхождения: " + странаПроисхождения);
+        System.out.println("Цена: " + цена + " руб.");
+        System.out.println("Состояние бронирования: " + (состояниеБронирования ? "Забронирован" : "Свободен"));
+    }
+
+    public static void main(String[] args) {
+        Товар товар1 = new Товар(
+                "Ноутбук",
+                LocalDate.of(2020, 6, 3),
+                "ARDOR GAMING",
+                "Китай",
+                64990,
+                false
+        );
+
+        товар1.вывестиИнформацию();
+    }
+}
